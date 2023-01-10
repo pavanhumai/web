@@ -1,0 +1,171 @@
+<html>
+    <body>
+        <style>
+            * {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	/* overflow: -moz-scrollbars-none; */
+}
+
+
+/*body::-webkit-scrollbar { width: 0 !important }*/
+
+nav {
+	background: #000;
+	overflow: auto;
+	padding: 20px;
+	background-image: linear-gradient(to right bottom, #c3c3c3, #d6d5d8);
+	position: fixed;
+	width: 100%;
+}
+
+.logo {
+	float: left;
+	margin-top: 15px;
+}
+
+.logo img {
+	width: 100px;
+}
+
+ul {
+	float: right;
+	list-style-type: none;
+	margin-right: 30px;
+	transition: max-height 0.2s ease-out;
+	margin-top: 36px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul li {
+	margin-left: 15px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 1);
+}
+
+section {
+	height: 1500px;
+	background: #efefef;
+}
+
+.btn-toggle {
+	background: transparent;
+	width: 40px;
+	padding: 5px;
+	float: right;
+	margin-top: -46px;
+	border: none;
+	outline: none;
+	transition: all .5s ease;
+	display: none;
+}
+
+.btn-toggle:hover {
+	background: #fff;
+}
+
+.btn-toggle:hover span {
+	background: #a29d9d;
+	transform: scale(0.8);
+}
+
+.btn-toggle span:nth-child(1) {
+	margin-top: 0px;
+}
+
+.btn-toggle span {
+	background: #fff;
+	display: block;
+	margin-top: 6px;
+	padding: 2px;
+	border-radius: 5px;
+	transition: all .5s ease;
+	transform: scale(1);
+}
+
+
+	
+
+@media screen and (max-width: 800px) {
+    ul li {
+		display: inherit;
+		margin-left: 0px;
+		padding: 10px;
+		background: transparent;
+		transition: all .5s linear;
+	}
+	ul li:hover {
+		background: #fff;
+	}
+	ul li:hover a {
+		color: #000;
+	}
+	.logo {
+		float: none;
+	}
+	ul {
+		float: none;
+		padding: 0px;
+		margin-right: 0px;
+		background: #000;
+		border-radius: 3px;
+		transition: max-height 0.2s ease-out;
+		max-height: 0;
+		overflow: hidden;
+	}
+	ul li a {
+		color: rgba(255, 255, 255, 1);
+	}
+	.btn-toggle {
+		display: block;
+	}
+}
+
+        </style>
+<nav>
+    <div class="logo">
+        <h1>Earavind</h1>
+    </div>
+    <button class="btn-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+</nav>
+
+
+<script>
+    let menuUL = document.getElementsByTagName("ul");
+    let heightul = menuUL[0].scrollHeight;
+    let y = document.getElementsByClassName("btn-toggle");
+    y[0].addEventListener("click",function(){
+
+        if(menuUL[0].style.maxHeight)
+        {
+            menuUL[0].style.maxHeight = null;
+        }
+        else
+        {
+            menuUL[0].style.maxHeight = menuUL[0].scrollHeight + "px";
+        }
+    }); 
+</script>
+
+    </body>
+</html>
